@@ -1,0 +1,162 @@
+.fooditem {
+    display: flex;
+    flex-flow: column;
+}
+
+.foodcard {
+    height: 480px;
+    width: 320px;
+    background-color: #F2F2F2;
+    border-radius: 10px;
+    border: 4px solid #1698D9;
+    position: relative;
+    clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%, 0 40px);
+}
+
+.selected {
+    border: 4px solid #D91667;
+}
+
+.disable {
+    border-color: #B3B3B3;
+}
+
+.food__back {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: -4px;
+    left: -4px;
+    border: 4px solid #1698D9;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.selected .food__back {
+    border-color: #D91667;
+}
+
+.disable .food__back {
+    border-color: #B3B3B3;
+}
+
+.foodcard::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 60px;
+    top: 18px;
+    left: -16px;
+    transform: rotate(-45deg);
+    background-color: #1698D9;
+}
+
+.selected::after {
+    background-color: #D91667;
+}
+
+.disable::after {
+    background-color: #B3B3B3;
+}
+
+.food__weigth {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: #1698D9;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.selected .food__weigth {
+    background-color: #D91667;
+}
+
+.disable .food__weigth {
+    background-color: #B3B3B3;
+    ;
+}
+
+.food__cat img {
+    position: absolute;
+    height: 280px;
+    width: 273px;
+    bottom: -4px;
+    left: -4px;
+    object-fit: scale-down;
+    z-index: -1000;
+    border-radius: 10px;
+}
+
+.disable .food__cat img {
+    filter: opacity(0.5);
+}
+
+.food__description {
+    text-align: left;
+    padding-left: 50px;
+}
+
+.food__description h4 {
+    margin: 20px 0 0 0;
+    font-family: Trebuchet MS;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #666666;
+}
+
+.food__description h2 {
+    margin: 5px 0 0 0;
+    font-family: Trebuchet MS;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 56px;
+    color: #000000;
+}
+
+.food__description h3 {
+    margin: 0;
+    font-family: Trebuchet MS;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+}
+
+.food__description h5 {
+    margin: 10px 0 0 0;
+    font-family: Trebuchet MS;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #666666;
+}
+
+.food__description h5 p {
+    margin: 0;
+}
+
+.disable h2, .disable h3, .disable h4, .disable h5 {
+    color: #B3B3B3;
+}
+
+.food__weigth p {
+    font-size: 22pt;
+    margin: 0;
+    z-index: 10;
+}
+
+.caption {
+    color: white;
+}

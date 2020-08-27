@@ -1,8 +1,10 @@
-import React from 'react'
-import cat from './Cat.png'
+import React, { useState } from 'react'
+import cat from './Cat1.png'
+import './FoodCard.css'
 
-export default function FoodCard() {
-    const [showBorder, setShowBorder] = React.useState(false);
+export default function FoodCard({ taste, portion, soldout, gift, caption, customer }) {
+    const [showBorder, setShowBorder] = useState(false);
+    const [selected, setSelected] = useState(false);
 
     const handleMouseEnter = () => {
         setShowBorder(true);
@@ -12,10 +14,19 @@ export default function FoodCard() {
         setShowBorder(false);
     }
 
+    const handleClick = () => {
+        setSelected((selected) => !selected);
+    }
+
     return (
-        <>
-            <div className="foodcard" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                <div className="food__back" style={{display: showBorder? 'block' : 'none'}}></div>
+        <div className="fooditem">
+            <div
+                className={`foodcard ${(selected) ? "selected" : ""} ${(soldout) ? "disable" : ""}`}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onClick={handleClick}
+            >
+                <div className="food__back" style={{ display: showBorder ? 'block' : 'none' }}></div>
                 <div className="food__weigth">
                     <p>0,5</p>
                     <span>КГ</span>
@@ -26,14 +37,24 @@ export default function FoodCard() {
                 <div className="food__description">
                     <h4>Сказачное заморское явство</h4>
                     <h2>Нямушка</h2>
-                    <h3>с рыбой</h3>
+                    <h3>{taste}</h3>
                     <h5>
-                        <b>10</b> порций
-                        <p>мышь в подарок</p>
+                        <b>{portion}</b> порций
+                        <p>{gift} в подарок</p>
+                        {customer && <p>заказчик доволен</p>}
                     </h5>
                 </div>
             </div>
-            <span className="caption">Че сидишь? Порадуй коте, <a href="/">купи.</a></span>
-        </>
+            <span className="caption">
+                {(soldout) ? `Печалька, ${taste} закончился.` :
+                    (selected) ? caption : (
+                        <>
+                            <>Че сидишь? Порадуй коте, </>
+                            <a href="/">купи.</a>
+                        </>
+                    )
+                }
+            </span>
+        </div>
     )
 }
