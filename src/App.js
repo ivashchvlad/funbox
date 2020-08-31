@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import './App.scss';
 
 import FoodCard from './FoodCard';
 import _food from './mock';
@@ -19,13 +19,14 @@ function App() {
           { 
             food.map(item => (
               <FoodCard 
+                key={item.id}
                 taste={item.taste} 
                 portion={item.portion} 
+                weight={item.weight}
                 soldout={item.soldout} 
                 gift={item.gift}
                 caption={item.caption}
                 customer={item.customer}
-                key={item.id}
               />
             )) 
           }

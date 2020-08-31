@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import cat from './Cat1.png'
-import './FoodCard.css'
+import './FoodCard.scss'
 
-export default function FoodCard({ taste, portion, soldout, gift, caption, customer }) {
+export default function FoodCard({ taste, portion, weight,  soldout, gift, caption, customer }) {
     const [showBorder, setShowBorder] = useState(false);
     const [selected, setSelected] = useState(false);
 
@@ -28,7 +28,7 @@ export default function FoodCard({ taste, portion, soldout, gift, caption, custo
             >
                 <div className="food__back" style={{ display: showBorder ? 'block' : 'none' }}></div>
                 <div className="food__weigth">
-                    <p>0,5</p>
+                    <p>{weight}</p>
                     <span>КГ</span>
                 </div>
                 <div className="food__cat">
