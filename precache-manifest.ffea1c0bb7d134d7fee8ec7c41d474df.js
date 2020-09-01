@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ddb542a8ff9e6630f8f3a31489dd5d41",
+    "revision": "911c764094d2bd36345812cbb8e5b2f7",
     "url": "/funbox/index.html"
   },
   {
-    "revision": "05ff4b10f78afa90f82f",
-    "url": "/funbox/static/css/main.0e166d89.chunk.css"
+    "revision": "68873b714f9e38273d11",
+    "url": "/funbox/static/css/main.3f7f0e02.chunk.css"
   },
   {
     "revision": "95fa951dbed7005559e8",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/funbox/static/js/2.ac9c5860.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "05ff4b10f78afa90f82f",
+    "revision": "68873b714f9e38273d11",
     "url": "/funbox/static/js/main.47950eeb.chunk.js"
   },
   {
